@@ -28,15 +28,20 @@ Pizza.prototype.price = function(){
 
 Pizza.prototype.addPizza = function(list){
   list.push(this);
+
+}
+
+Pizza.prototype.showPizzas = function(list){
+
 }
 
 // UI Logic
 $(document).ready(function(){
   let pizzaList = [];
   $("form#submit").submit(function(event) {
+    event.preventDefault();
     const arrayToppings = [];
     const pizzaSize = $("input:radio[name=size]:checked").val();
-    event.preventDefault();
     $(".total").show();
     $("input:checkbox[name=pizza-toppings]:checked").each(function() {
       const pizzaTopping = $(this).val();
@@ -46,5 +51,6 @@ $(document).ready(function(){
     newPizza.addPizza(pizzaList);
     console.log(pizzaList);
     $('#final-price').text(newPizza.price());
+    $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>")
   });
 })
