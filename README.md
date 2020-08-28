@@ -8,6 +8,9 @@
 
 This website uses a pizza object constructor to create a pizza with user inputted topings. It then uses a pizza prototype to calculate the cost of the pizza based on what toppings the user chose.
 
+### Specs:
+* _Create pizza object within console._
+
 ## Setup/Installation Requirements
 
 * _open terminal_
