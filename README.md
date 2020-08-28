@@ -10,7 +10,9 @@ This website uses a pizza object constructor to create a pizza with user inputte
 
 ### Specs:
 * _Create pizza object within console._
-* _Store user inputted values into variables_
+* _Store user inputted values into variables._
+* _Create a constructor that creates an object instance with the user inputted size/toppings._
+* _Create price prototype to calculate how much the pizza will cost._
 
 ## Setup/Installation Requirements
 

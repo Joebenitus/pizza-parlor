@@ -4,17 +4,21 @@ function Pizza(size, toppings){
   this.toppings = toppings;
 }
 
+// Pizza.prototype.price = function
+
 // UI Logic
 $(document).ready(function(){
   $("form#submit").submit(function(event) {
-    let arrayToppings = []
+    const arrayToppings = []
+    const pizzaSize = $("input:radio[name=size]:checked").val();
     event.preventDefault();
     $(".total").show();
     $("input:checkbox[name=pizza-toppings]:checked").each(function() {
       const pizzaTopping = $(this).val();
       arrayToppings.push(pizzaTopping);
-      $('#final-price').append(pizzaTopping + "<br>");
+      // $('#final-price').text(arrayToppings + " " + pizzaSize);
     });
-    // $('#transportation_survey').hide();
+    let newPizza = new Pizza(pizzaSize, arrayToppings);
+    console.log(newPizza)
   });
 })
