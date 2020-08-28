@@ -4,7 +4,27 @@ function Pizza(size, toppings){
   this.toppings = toppings;
 }
 
-// Pizza.prototype.price = function
+Pizza.prototype.price = function(){
+  let price;
+  switch (this.size){
+    case ("personal-pan"):
+      price = 8;
+      break;
+    case ("small"):
+      price = 12;
+      break;
+    case ("medium"):
+      price = 15;
+      break;
+    case ("large"):
+      price = 18;
+      break;
+  }
+  for (let i=0; i < this.toppings.length; i++){
+    price += 1;
+  }
+  return price;
+}
 
 // UI Logic
 $(document).ready(function(){
@@ -16,9 +36,8 @@ $(document).ready(function(){
     $("input:checkbox[name=pizza-toppings]:checked").each(function() {
       const pizzaTopping = $(this).val();
       arrayToppings.push(pizzaTopping);
-      // $('#final-price').text(arrayToppings + " " + pizzaSize);
     });
     let newPizza = new Pizza(pizzaSize, arrayToppings);
-    console.log(newPizza)
+    $('#final-price').text(newPizza.price());
   });
 })
