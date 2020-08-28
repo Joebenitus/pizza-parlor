@@ -1,3 +1,18 @@
+body {
+  background-color: rgb(51, 51, 51);
+  color: white;
+}
+
+.card, .jumbotron {
+  background-color: rgb(128, 63, 63);
+  border: 10px solid red;
+  border-style: groove;
+}
+
+.card-title {
+  margin-top: -10px;
+}
+
 .jumbotron {
   text-align: center;
 }
@@ -14,6 +29,7 @@
   display: none;
 }
 
-input {
-  text-align: wrap;
+.btn {
+  margin-top: 10px;
 }
+
