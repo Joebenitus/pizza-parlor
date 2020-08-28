@@ -12,11 +12,11 @@
     <div class="jumbotron">
       <h1>Joe's Pizza Parlor</h1>
     </div>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <form id="form-size"></form>
+    <form id="submit">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
               <h3 class="card-title">Choose your pizza size: </h3>
               <div class="radio">
                 <label>
@@ -42,14 +42,12 @@
                   Large
                 </label>
               </div>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-            <form id="form-toppings">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
               <div class="form-group">
                 <h3 class="card-title">Select Toppings</h3>
                 <input type="checkbox" name="pizza-toppings" value="pepperoni"> Pepperoni<br>
@@ -64,10 +62,14 @@
                 <input type="checkbox" name="pizza-toppings" value="pineapple"> Pineapple<br>
                 <input type="checkbox" name="pizza-toppings" value="spinach"> Spinach<br>
               </div>
-            </form>
+            </div>
           </div>
         </div>
+        <button type="submit">Order Pizza</button>
       </div>
+    </form>
+    <div class="total">
+      <h3>Total: <span id="final-price"></span></h3>
     </div>
   </div>
 </body>

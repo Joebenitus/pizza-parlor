@@ -10,7 +10,7 @@ This website uses a pizza object constructor to create a pizza with user inputte
 
 ### Specs:
 * _Create pizza object within console._
-* _Allow user to choose size/topping(s)_
+* _Store user inputted values into variables_
 
 ## Setup/Installation Requirements
 
