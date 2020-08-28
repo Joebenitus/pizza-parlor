@@ -34,7 +34,6 @@ Pizza.prototype.getTotal = function(list){
   let total = 0;
   for (i=0; i < list.length; i++){
     total += list[i];
-    console.log(total);
   }
   return total;
 }
@@ -53,13 +52,7 @@ $(document).ready(function(){
     });
     let newPizza = new Pizza(pizzaSize, arrayToppings);
     newPizza.priceList(pizzaList);
-    console.log(pizzaList);
+    $("#final-price").text(newPizza.getTotal(pizzaList));
     $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>");
-    $("button#button-to-checkout").click(function(event){
-      event.preventDefault();
-      $(".order").hide();
-      $(".total").show();
-      $("#final-price").text(newPizza.getTotal(pizzaList))
-    });
   });
 })
