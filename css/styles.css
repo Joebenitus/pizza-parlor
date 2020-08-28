@@ -13,3 +13,7 @@
 #order-list {
   display: none;
 }
+
+input {
+  text-align: wrap;
+}
