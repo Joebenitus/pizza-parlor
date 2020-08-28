@@ -27,6 +27,8 @@ This website uses a pizza object constructor to create a pizza with user inputte
 * _locate and open folder on desktop named "pizza-parlor"_
 * _open the file named "index.html"_
 
+GitHub-Pages link: https://joebenitus.github.io/pizza-parlor
+
 ## Known Bugs
 
 _There are no known bugs at this time._
@@ -41,6 +43,7 @@ _If you have any questions or ideas on how to improve this project, feel free to
 * _CSS_
 * _Bootstrap_
 * _jQuery_
+* _JavaScript_
 * _VS Code_
 * _Git/GitHub_
 
