@@ -17,6 +17,7 @@ This website uses a pizza object constructor to create a pizza with user inputte
 * _Create display pizzas prototype to display all pizzas the user has ordered._
 * _Add price of all pizzas to determine order total_
 * _Add branch statement that checks if the user has inputted a size and toppings_
+* _Add ability to show order details by clicking button under total_
 
 ## Setup/Installation Requirements
 

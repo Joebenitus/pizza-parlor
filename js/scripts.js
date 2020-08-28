@@ -55,6 +55,10 @@ $(document).ready(function(){
       newPizza.priceList(priceArray);
       $("#final-price").text(newPizza.getTotal(priceArray));
       $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>"); 
+      
     }
-  });
+   }); 
+  $("#button-details").click(function(){
+    $("#order-list").toggle();
+  })
 })

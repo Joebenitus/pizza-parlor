@@ -9,3 +9,7 @@
 .order {
   display: none;
 }
+
+#order-list {
+  display: none;
+}
