@@ -36,17 +36,17 @@ Pizza.prototype.getTotal = function(list){
     total += list[i];
     console.log(total);
   }
+  return total;
 }
 
 // UI Logic
 $(document).ready(function(){
   let pizzaList = [];
-  let grandTotal = 0;
   $("form#submit").submit(function(event) {
     event.preventDefault();
     const arrayToppings = [];
     const pizzaSize = $("input:radio[name=size]:checked").val();
-    $(".total").show();
+    $(".order").show();
     $("input:checkbox[name=pizza-toppings]:checked").each(function() {
       const pizzaTopping = $(this).val();
       arrayToppings.push(pizzaTopping);
@@ -54,7 +54,12 @@ $(document).ready(function(){
     let newPizza = new Pizza(pizzaSize, arrayToppings);
     newPizza.priceList(pizzaList);
     console.log(pizzaList);
-    $('#final-price').text(newPizza.price());
-    $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>"); 
+    $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>");
+    $("button#button-to-checkout").click(function(event){
+      event.preventDefault();
+      $(".order").hide();
+      $(".total").show();
+      $("#final-price").text(newPizza.getTotal(pizzaList))
+    });
   });
 })
