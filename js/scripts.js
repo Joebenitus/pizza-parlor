@@ -40,19 +40,21 @@ Pizza.prototype.getTotal = function(list){
 
 // UI Logic
 $(document).ready(function(){
-  let pizzaList = [];
+  let priceArray = [];
   $("form#submit").submit(function(event) {
     event.preventDefault();
     const arrayToppings = [];
     const pizzaSize = $("input:radio[name=size]:checked").val();
-    $(".order").show();
     $("input:checkbox[name=pizza-toppings]:checked").each(function() {
       const pizzaTopping = $(this).val();
       arrayToppings.push(pizzaTopping);
     });
-    let newPizza = new Pizza(pizzaSize, arrayToppings);
-    newPizza.priceList(pizzaList);
-    $("#final-price").text(newPizza.getTotal(pizzaList));
-    $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>");
+    if (arrayToppings.length && pizzaSize){
+      $(".order").show();
+      let newPizza = new Pizza(pizzaSize, arrayToppings);
+      newPizza.priceList(priceArray);
+      $("#final-price").text(newPizza.getTotal(priceArray));
+      $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>"); 
+    }
   });
 })
