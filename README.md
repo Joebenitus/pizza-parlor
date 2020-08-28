@@ -15,6 +15,7 @@ This website uses a pizza object constructor to create a pizza with user inputte
 * _Create price prototype to calculate how much the pizza will cost._
 * _Create add pizza prototype to allow ordering multiple pizzas._
 * _Create display pizzas prototype to display all pizzas the user has ordered._
+* _Add price of all pizzas to determine order total_
 
 ## Setup/Installation Requirements
 

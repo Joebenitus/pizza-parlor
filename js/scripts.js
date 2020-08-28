@@ -2,10 +2,10 @@
 function Pizza(size, toppings){
   this.size = size;
   this.toppings = toppings;
+  this.price;
 }
 
 Pizza.prototype.price = function(){
-  let price;
   switch (this.size){
     case ("personal-pan"):
       price = 8;
@@ -26,18 +26,22 @@ Pizza.prototype.price = function(){
   return price;
 }
 
-Pizza.prototype.addPizza = function(list){
-  list.push(this);
-
+Pizza.prototype.priceList = function(list){
+  list.push(this.price());
 }
 
-Pizza.prototype.showPizzas = function(list){
-
+Pizza.prototype.getTotal = function(list){
+  let total = 0;
+  for (i=0; i < list.length; i++){
+    total += list[i];
+    console.log(total);
+  }
 }
 
 // UI Logic
 $(document).ready(function(){
   let pizzaList = [];
+  let grandTotal = 0;
   $("form#submit").submit(function(event) {
     event.preventDefault();
     const arrayToppings = [];
@@ -48,9 +52,9 @@ $(document).ready(function(){
       arrayToppings.push(pizzaTopping);
     });
     let newPizza = new Pizza(pizzaSize, arrayToppings);
-    newPizza.addPizza(pizzaList);
+    newPizza.priceList(pizzaList);
     console.log(pizzaList);
     $('#final-price').text(newPizza.price());
-    $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>")
+    $("#order-list").append("<li>Size: " + pizzaSize + "<br>Toppings: " + arrayToppings.join(", ") + "<br>Price: $" + newPizza.price() + "</li>"); 
   });
 })
